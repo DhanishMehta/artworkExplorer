@@ -1,0 +1,30 @@
+<app-navbar></app-navbar>
+<div class="d-flex justify-content-between mt-3 px-3">
+    <a routerLink="/"
+        class="text-orange text-decoration-none">
+        <i class="bi bi-arrow-left me-2"></i> Back to exploring</a>
+</div>
+<app-loader *ngIf="!isLoaded"></app-loader>
+<main *ngIf="isLoaded"
+    class="container-fluid d-flex w-100 p-4 justify-content-center align-items-start flex-column flex-sm-column flex-md-column flex-lg-row flex-xl-row flex-xxl-row"
+    id="main-container">
+
+    <div class="image-container mb-2 p-1 d-flex flex-column align-items-center justify-content-start w-100 h-100">
+        <img [src]="artwork_image_url" [alt]="artwork.title" class="w-100" style="max-width: 80vw; height: auto;">
+    </div>
+    <div class="details-container d-flex flex-column w-100 ps-lg-4 pe-2 ps-sm-2 h-25 justify-content-start">
+        <div class="artworkCategory fs-6 text-orange mb-1">{{artwork.place_of_origin}}</div>
+        <div class="artworkTitle fs-3 fw-bold mb-2 lh-sm">{{artwork.title}}</div>
+        <div class="artworkDesc mb-3 fw-medium">by {{artwork.artist_display}}</div>
+        <div class="artworkDesc mt-3"><span class="fw-medium">Dimensions: </span>>{{artwork.dimensions}}</div>
+        <div class="artworkDesc mb-3"><span class="fw-medium">Presented on: </span>{{artwork.date_display}}</div>
+        <div class="artworkDesc mb-3"><span class="fw-medium">Provenance text: </span>{{artwork.provenance_text}}</div>
+        <div class="artworkDesc mb-3"><span class="fw-medium">Exhibition History: </span>>{{artwork.exhibition_history}}
+        </div>
+        <div class="artworkDesc mb-3"><span class="fw-medium">Publication History:
+            </span>{{artwork.publication_history}}</div>
+        <div class="artworkDesc mb-3"><span class="fw-medium">Credits: </span>{{artwork.credit_line}}</div>
+        <button class="btn w-25" (click)="handleSaveForLater()" [ngClass]="{'btn-bg-orange': savedForLater, 'btn-orange': !savedForLater}">{{saveForLaterText}}</button>
+    </div>
+</main>
+<app-footer></app-footer>

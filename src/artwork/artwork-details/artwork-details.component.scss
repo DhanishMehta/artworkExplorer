@@ -1,0 +1,15 @@
+.artworkDesc{
+    font-size: 12px;
+    font-style: italic;
+}
+
+
+.image-container img{
+    max-width: 80vw;
+}
+
+@media screen and (min-width: 1024px){
+    .image-container img{
+        max-width: 40vw;
+    }   
+}

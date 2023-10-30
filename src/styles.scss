@@ -1,0 +1,53 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap');
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-color: #FEEDD1 !important; }
+
+.vh-25{
+    height: 25vh !important;
+}
+
+.bg-theme {
+    background-color: #FEEDD1 !important;
+}
+
+.bg-body-orange{
+    background: rgb(254,99,32) !important;
+}
+
+.text-orange{
+    color: rgb(254,99,32) !important;
+}
+
+.navbar-brand{
+    font-family: 'DM Serif Display';
+}
+
+.btn-orange{
+    background-color: transparent !important;
+    color: rgb(254,99,32)!important;
+    border: 1px solid rgb(254,99,32) !important;
+}
+
+.btn-orange:hover{
+    background-color: rgb(254,99,32) !important;
+    color: whitesmoke !important;
+}
+
+.btn-bg-orange{
+    background-color: rgb(254,99,32) !important;
+    color: whitesmoke !important;
+}
+
+::-webkit-scrollbar{
+    width: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background: rgb(254,99,32, 0.4);
+    border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(254,99,32, 0.8);
+}
