@@ -35,9 +35,7 @@ export class ArtworkService {
     searchQuery: string,
     limit: number
   ): Observable<searchArtworkResponse> {
-    console.warn(
-      this.rootLink + '/search?q=' + searchQuery + '&field=id&limit=' + limit
-    );
+
     return this.http.get<searchArtworkResponse>(
       this.rootLink +
         '/search?q=' +
@@ -57,7 +55,6 @@ export class ArtworkService {
     this.SFLItems.push(id);
 
     this.savedForLaterItems$ = of(this.SFLItems);
-    console.log(this.SFLItems); 
     }
   
   deleteFromSavedForLater(id: number) {
@@ -67,6 +64,5 @@ export class ArtworkService {
     this.SFLItems.splice(index, 1);
 
     this.savedForLaterItems$ = of(this.SFLItems);
-    console.log(this.SFLItems);
   }
 }

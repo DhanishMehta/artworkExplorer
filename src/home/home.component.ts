@@ -23,7 +23,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   isLoading: boolean = true;
 
   constructor(private artworkService: ArtworkService, private fb: FormBuilder) {
-    console.log('inside home component constructor');
+    // console.log('inside home component constructor');
   }
 
   ngOnInit(): void {
@@ -63,7 +63,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     .getArtworkByPage(this.page, this.pageEvent.pageSize)
     .subscribe({
       next: (multipleArtwork: multipleArtwork) => {
-          console.log('inside subscribe');
+          // console.log('inside subscribe');
 
           multipleArtwork.data.forEach((art) => {
             this.artworkIDs.push(art.id);
@@ -75,7 +75,7 @@ export class HomeComponent implements OnInit, OnDestroy {
           console.error(er);
         },
         complete: () => {
-          console.log('subscribe completes');
+          // console.log('subscribe completes');
         },
       });
 
@@ -94,15 +94,15 @@ export class HomeComponent implements OnInit, OnDestroy {
       .getArtworkAfterSearch(searchQuery, this.pageEvent.pageSize)
       .subscribe({
         next: (searchArtworkRepsonse: searchArtworkResponse) => {
-          console.log('inside filter');
+          // console.log('inside filter');
 
           const temp_subscriptions: Subscription[] = [];
           this.artworkIDs = [];
 
-          console.log(searchArtworkRepsonse.data.length);
+          // console.log(searchArtworkRepsonse.data.length);
 
           searchArtworkRepsonse.data.forEach((artwork) => {
-            console.log('inside loop', artwork.id);
+            // console.log('inside loop', artwork.id);
             this.artworkIDs.push(artwork.id);
           });
           this.isLoading = false;
